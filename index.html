@@ -10,9 +10,11 @@
 		<p>Reminder msg:<br>
 			<textarea ng-model="kmsg" autofocus rows="5" cols="50"></textarea></p>
 		<a href="https://api.whatsapp.com/send?text={{kmsg}}" data-action="share/whatsapp/share">Send</a>
-		<p>{{kmsg}}</p>
+
+		<a href="https://api.whatsapp.com/send?phone=918000554559&text={{kmsg}}" data-action="share/whatsapp/share">Send Me</a>
 	</div>
 
 <!-- make send button disabled when we type only -->
+<!-- add message that it was send to you by this app at the end -->
 </body>
 </html>
