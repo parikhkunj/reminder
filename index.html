@@ -18,23 +18,33 @@
 </head>
 <body>
 
-	<div ng-app="" >
+	<div ng-app="kApp" ng-controller="kInit">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-6">
 					<form>
 					<div class="form-group">
 						<h3>Reminder message:</h3>
-						<textarea class="form-control" ng-model="kmsg" autofocus rows="5" cols="50"></textarea></p>
-						<a href="https://api.whatsapp.com/send?text={{kmsg}}" class="btn btn-success btn-block">Send to your friends</a>
-						<a href="https://api.whatsapp.com/send?phone=918000554559&text={{kmsg}}" class="btn btn-success btn-block">Send Me</a>
+						<p>{{ startMsg }}</p>
+						<textarea class="form-control" ng-model="kmsg" autofocus rows="5" cols="50" placeholder="Enter your Reminder task here"></textarea></p>
+						<a href="https://api.whatsapp.com/send?text={{startMsg+'\n'+kmsg+'\n'+endMsg}}" class="btn btn-success btn-block">Send to your friends</a>
+						<a href="https://api.whatsapp.com/send?phone=918000554559&text={{startMsg2K+'\n'+kmsg+'\n'+endMsg}}" class="btn btn-success btn-block">Send Me</a>
 					</div>
 					</form>
 				</div>
 			</div>
 		</div>
-		
 	</div>
+
+	<script>
+		var app = angular.module('kApp',[]);
+		app.controller('kInit',function($scope) {
+			$scope.startMsg = "Heya! This is to remind you to remind me...";
+			$scope.startMsg2K = "Heya! Kunj Please remind me to...";
+			$scope.kmsg = "";
+			$scope.endMsg = "-Make your own reminder using parikhkunj.github.io/reminder app.";
+		});
+	</script>
 
 <!-- make send button enabled when we type only -->
 <!-- add message that it was send to you by this app at the end -->
