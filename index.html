@@ -6,13 +6,13 @@
 </head>
 <body>
 
-	<div ng-app="">
+	<div ng-app="" >
 		<p>Reminder msg:<br>
 			<textarea ng-model="kmsg" autofocus rows="5" cols="50"></textarea></p>
-		<a href=":/?send={{kmsg}}">Send</a>
+		<a href="whatsapp://?send?text={{kmsg}}" data-action="share/whatsapp/share">Send</a>
 		<p>{{kmsg}}</p>
 	</div>
 
-
+<!-- make send button disabled when we type only -->
 </body>
 </html>
