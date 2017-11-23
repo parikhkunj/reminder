@@ -2,19 +2,41 @@
 <html>
 <head>
 	<title>WA Reminder</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Angular script -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 	<div ng-app="" >
-		<p>Reminder msg:<br>
-			<textarea ng-model="kmsg" autofocus rows="5" cols="50"></textarea></p>
-		<a href="https://api.whatsapp.com/send?text={{kmsg}}" data-action="share/whatsapp/share">Send</a>
-
-		<a href="https://api.whatsapp.com/send?phone=918000554559&text={{kmsg}}" data-action="share/whatsapp/share">Send Me</a>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6">
+					<form>
+					<div class="form-group">
+						<h3>Reminder message:</h3>
+						<textarea class="form-control" ng-model="kmsg" autofocus rows="5" cols="50"></textarea></p>
+						<a href="https://api.whatsapp.com/send?text={{kmsg}}" class="btn btn-success btn-block">Send to your friends</a>
+						<a href="https://api.whatsapp.com/send?phone=918000554559&text={{kmsg}}" class="btn btn-success btn-block">Send Me</a>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 
-<!-- make send button disabled when we type only -->
+<!-- make send button enabled when we type only -->
 <!-- add message that it was send to you by this app at the end -->
 </body>
 </html>
