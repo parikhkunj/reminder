@@ -27,8 +27,8 @@
 						<h3>Reminder message:</h3>
 						<p>{{ startMsg }}</p>
 						<textarea class="form-control" ng-model="kmsg" autofocus rows="5" cols="50" placeholder="Enter your Reminder task here"></textarea></p>
-						<a href="https://api.whatsapp.com/send?text={{'%22'+startMsg+'\n'+kmsg+'%22\n'+endMsg}}" class="btn btn-success btn-block">Send to your friends</a>
-						<a href="https://api.whatsapp.com/send?phone=918000554559&text={{'%22'+startMsg2K+'\n'+kmsg+'%22\n'+endMsg}}" class="btn btn-success btn-block">Send Me</a>
+						<a href="https://api.whatsapp.com/send?text={{'%22'+startMsg+'\n'+kmsg+'%22%0A'+endMsg}}" class="btn btn-success btn-block">Send to your friends</a>
+						<a href="https://api.whatsapp.com/send?phone=918000554559&text={{'%22'+startMsg2K+'\n'+kmsg+'%22%0A'+endMsg}}" class="btn btn-success btn-block">Send Me</a>
 					</div>
 					</form>
 				</div>
