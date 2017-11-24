@@ -23,14 +23,27 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<form>
-					<div class="form-group">
-						<h3>Reminder message:</h3>
-						<p>{{ startMsg }}</p>
-						<textarea class="form-control" ng-model="kmsg" autofocus rows="5" cols="50" placeholder="Enter your Reminder task here"></textarea></p>
-						<a href="https://api.whatsapp.com/send?text={{'%22'+startMsg+'\n'+kmsg+'%22%0A'+endMsg}}" class="btn btn-success btn-block">Send to your friends</a>
-						<a href="https://api.whatsapp.com/send?phone=918000554559&text={{'%22'+startMsg2K+'\n'+kmsg+'%22%0A'+endMsg}}" class="btn btn-success btn-block">Send to Kunj</a>
-					</div>
+						<div class="form-group">
+							<h3>Reminder message:</h3>
+							<p>{{ startMsg }}</p>
+							<textarea class="form-control" ng-model="kmsg" autofocus rows="5" cols="50" placeholder="Enter your Reminder task here"></textarea>
+							<br>
+							<a href="https://api.whatsapp.com/send?text={{'%22'+startMsg+'\n'+kmsg+'%22%0A%0A%0A'+endMsg}}" class="btn btn-success btn-block">Send to your friends</a>
+							<a href="https://api.whatsapp.com/send?phone=918000554559&text={{'%22'+startMsg2K+'\n'+kmsg+'%22%0A'+endMsg}}" class="btn btn-success btn-block">Send to Kunj</a>
+						</div>
 					</form>
+					<a class="btn btn-primary btn-block" href="#helpCollapse" data-toggle="collapse">Help!</a>
+					<div class="panel panel-success collapse" id="helpCollapse">
+						<div class="panel-body">
+							<ul>
+								<li>Write your reminder task in the box</li>
+								<li>Send to any of your WhatsApp contacts, OR</li>
+								<li>Send it to KUNJ, dev of the app.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
 				</div>
 			</div>
 		</div>
@@ -39,8 +52,8 @@
 	<script>
 		var app = angular.module('kApp',[]);
 		app.controller('kInit',function($scope) {
-			$scope.startMsg = "Heya! This is to remind you to remind me...";
-			$scope.startMsg2K = "Heya! Kunj Please remind me to...";
+			$scope.startMsg = "Heya! Please remind me...";
+			$scope.startMsg2K = "Heya! Kunj Please remind me...";
 			$scope.kmsg = "";
 			$scope.endMsg = "-Make your own reminder using parikhkunj.github.io/reminder app.";
 		});
